@@ -1,10 +1,14 @@
-cmake_minimum_required(VERSION 3.14...3.22)
+cmake_minimum_required(VERSION 3.22)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # ---- Project ----
 
 # Note: update this to your new project's name and version
 project(
-  Greeter
+  AcquireMoney
   VERSION 1.0
   LANGUAGES CXX
 )
