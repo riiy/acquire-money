@@ -11,7 +11,7 @@ project(AcquireMoneyTests LANGUAGES CXX)
 option(ENABLE_TEST_COVERAGE "Enable test coverage" OFF)
 option(TEST_INSTALLED_VERSION "Test the version found by find_package" OFF)
 
-# --- Import tools ----
+# ---- Import tools ----
 
 include(../cmake/tools.cmake)
 
@@ -28,11 +28,19 @@ else()
   CPMAddPackage(NAME AcquireMoney SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
 endif()
 
+# ---- spdlog  ----
+if(NOT TARGET spdlog)
+  # Stand-alone build
+  find_package(spdlog REQUIRED)
+endif()
+
 # ---- Create binary ----
 
 file(GLOB sources CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp)
 add_executable(${PROJECT_NAME} ${sources})
-target_link_libraries(${PROJECT_NAME} doctest::doctest AcquireMoney::AcquireMoney)
+target_link_libraries(
+  ${PROJECT_NAME} doctest::doctest AcquireMoney::AcquireMoney spdlog::spdlog_header_only
+)
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 
 # enable compiler warnings
