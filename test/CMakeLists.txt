@@ -21,6 +21,8 @@ include(../cmake/CPM.cmake)
 
 CPMAddPackage("gh:doctest/doctest@2.4.9")
 CPMAddPackage("gh:TheLartians/Format.cmake@1.7.3")
+# ---- spdlog  ----
+CPMAddPackage("gh:gabime/spdlog@1.11.0")
 
 if(TEST_INSTALLED_VERSION)
   find_package(AcquireMoney REQUIRED)
@@ -28,11 +30,6 @@ else()
   CPMAddPackage(NAME AcquireMoney SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
 endif()
 
-# ---- spdlog  ----
-if(NOT TARGET spdlog)
-  # Stand-alone build
-  find_package(spdlog REQUIRED)
-endif()
 
 # ---- Create binary ----
 
