@@ -11,7 +11,7 @@ project(AcquireMoneyTests LANGUAGES CXX)
 option(ENABLE_TEST_COVERAGE "Enable test coverage" OFF)
 option(TEST_INSTALLED_VERSION "Test the version found by find_package" OFF)
 
-# --- Import tools ----
+# ---- Import tools ----
 
 include(../cmake/tools.cmake)
 
@@ -21,6 +21,8 @@ include(../cmake/CPM.cmake)
 
 CPMAddPackage("gh:doctest/doctest@2.4.9")
 CPMAddPackage("gh:TheLartians/Format.cmake@1.7.3")
+# ---- spdlog  ----
+CPMAddPackage("gh:gabime/spdlog@1.11.0")
 
 if(TEST_INSTALLED_VERSION)
   find_package(AcquireMoney REQUIRED)
@@ -32,7 +34,9 @@ endif()
 
 file(GLOB sources CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp)
 add_executable(${PROJECT_NAME} ${sources})
-target_link_libraries(${PROJECT_NAME} doctest::doctest AcquireMoney::AcquireMoney)
+target_link_libraries(
+  ${PROJECT_NAME} doctest::doctest AcquireMoney::AcquireMoney spdlog::spdlog_header_only
+)
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 
 # enable compiler warnings
