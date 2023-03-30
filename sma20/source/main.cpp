@@ -1,45 +1,39 @@
-#include "acquiremoney/version.h"
 #include <cxxopts.hpp>
+#include <fstream>
 #include <iostream>
 #include <string>
-#include <fstream>
 #include <unordered_map>
+
+#include "acquiremoney/version.h"
 using namespace std;
-int read_csv(string fname)
-{vector<vector<string>> content;
-	vector<string> row;
-	string line, word;
+int read_csv(string fname) {
+  vector<vector<string>> content;
+  vector<string> row;
+  string line, word;
 
-	fstream file (fname, ios::in);
-	if(file.is_open())
-	{
-		while(getline(file, line))
-		{
-			row.clear();
+  fstream file(fname, ios::in);
+  if (file.is_open()) {
+    while (getline(file, line)) {
+      row.clear();
 
-			stringstream str(line);
+      stringstream str(line);
 
-			while(getline(str, word, ','))
-				row.push_back(word);
-			content.push_back(row);
-		}
-	}
-	else
-		cout<<"Could not open the file\n";
+      while (getline(str, word, ',')) row.push_back(word);
+      content.push_back(row);
+    }
+  } else
+    cout << "Could not open the file\n";
 
-	for(int i=0;i<content.size();i++)
-	{
-		for(int j=0;j<content[i].size();j++)
-		{
-			cout<<content[i][j]<<" ";
-		}
-		cout<<"\n";
-	}
+  for (int i = 0; i < content.size(); i++) {
+    for (int j = 0; j < content[i].size(); j++) {
+      cout << content[i][j] << " ";
+    }
+    cout << "\n";
+  }
 
-	return 0;
+  return 0;
 }
 auto main(int argc, char** argv) -> int {
-
   cxxopts::Options options(*argv, "A program to welcome the world!");
 
   // clang-format off
