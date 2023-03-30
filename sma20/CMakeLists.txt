@@ -20,6 +20,8 @@ CPMAddPackage(
   OPTIONS "CXXOPTS_BUILD_EXAMPLES NO" "CXXOPTS_BUILD_TESTS NO" "CXXOPTS_ENABLE_INSTALL YES"
 )
 CPMAddPackage("gh:TheLartians/Format.cmake@1.7.3")
+CPMAddPackage("gh:red0124/ssp@1.4.0")
+CPMAddPackage("gh:fastfloat/fast_float@3.11.0")
 
 CPMAddPackage(NAME AcquireMoney SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
 
@@ -31,4 +33,4 @@ add_executable(${PROJECT_NAME} ${sources})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 
-target_link_libraries(${PROJECT_NAME} AcquireMoney::AcquireMoney cxxopts)
+target_link_libraries(${PROJECT_NAME} AcquireMoney::AcquireMoney cxxopts ssp fast_float)
