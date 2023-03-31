@@ -14,6 +14,7 @@ auto main(int argc, char** argv) -> int {
   options.add_options()
     ("h,help", "Show help")
     ("v,version", "Print the current version number")
+    ("f,file", "文件路径")
   ;
   // clang-format on
 
