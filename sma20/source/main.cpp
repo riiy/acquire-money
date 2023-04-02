@@ -33,6 +33,10 @@ auto main(int argc, char** argv) -> int {
   for (const auto& [seq, date, open, close, high, low, volume, amount, sma20] :
        p.iterate<int, std::string, float, float, float, float, float, float, float>())
     std::cout << open << " " << close << " " << sma20 << std::endl;
-
+  ss::parser daily_sz000001{"/data/stock/daily_data_qfq/sz000001.csv", ","};
+  for (const auto& [seq,date,open,high,low,close,volume,outstanding_share,turnover] :
+         daily_sz000001.iterate<int, std::string, float, float, float, float, float, float,float>()){
+    std::cout << seq << std::endl;
+  }
   return 0;
 }
