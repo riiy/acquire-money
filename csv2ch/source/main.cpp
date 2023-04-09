@@ -24,7 +24,19 @@ std::string get_stem(const fs::path& p) { return p.stem().string(); }
 
 auto main() -> int {
   clickhouse::Client client(clickhouse::ClientOptions().SetHost("localhost").SetPort(19000));
-
+  // CREATE OR REPLACE TABLE daily_data (
+  // symbol String,
+  // date String,
+  // open Float64,
+  // high Float64,
+  // low Float64,
+  // close Float64,
+  // volume Float64,
+  // outstanding_share Float64,
+  // turnover Float64,
+  // updated_at DateTime('Asia/Shanghai') DEFAULT now(),
+  // updated_at_date Date DEFAULT toDate(updated_at)
+  // ) ENGINE = MergeTree() ORDER BY (symbol, date);
   std::string path = "/data/stock/daily_data_qfq";
   for (const auto& entry : fs::directory_iterator(path)) {
     break;
