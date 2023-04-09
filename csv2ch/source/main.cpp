@@ -27,6 +27,7 @@ auto main() -> int {
 
   std::string path = "/data/stock/daily_data_qfq";
   for (const auto& entry : fs::directory_iterator(path)) {
+    break;
     clickhouse::Block block;
 
     auto symbol = std::make_shared<clickhouse::ColumnString>();
