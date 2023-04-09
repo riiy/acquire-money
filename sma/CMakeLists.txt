@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-project(sma20 LANGUAGES CXX)
+project(sma LANGUAGES CXX)
 
 # --- Import tools ----
 
@@ -20,12 +20,13 @@ CPMAddPackage(
   OPTIONS "CXXOPTS_BUILD_EXAMPLES NO" "CXXOPTS_BUILD_TESTS NO" "CXXOPTS_ENABLE_INSTALL YES"
 )
 CPMAddPackage("gh:TheLartians/Format.cmake@1.7.3")
-CPMAddPackage("gh:red0124/ssp@1.4.0")
-CPMAddPackage("gh:fastfloat/fast_float@3.11.0")
+
+file(DOWNLOAD
+     https://raw.githubusercontent.com/vincentlaucsb/csv-parser/master/single_include/csv.hpp
+     "../include/csv.hpp"
+)
 
 CPMAddPackage(NAME AcquireMoney SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
-
-# ---- Create standalone executable ----
 
 file(GLOB sources CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp)
 
@@ -33,4 +34,4 @@ add_executable(${PROJECT_NAME} ${sources})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 
-target_link_libraries(${PROJECT_NAME} AcquireMoney::AcquireMoney cxxopts ssp fast_float)
+target_link_libraries(${PROJECT_NAME} AcquireMoney::AcquireMoney cxxopts ta_lib)
