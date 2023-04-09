@@ -18,3 +18,4 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../standalone ${CMAKE_BINARY_DIR}/sta
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../test ${CMAKE_BINARY_DIR}/test)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../documentation ${CMAKE_BINARY_DIR}/documentation)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../sma20 ${CMAKE_BINARY_DIR}/sma20)
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../csv2ch ${CMAKE_BINARY_DIR}/csv2ch)
