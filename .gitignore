@@ -4,3 +4,5 @@
 .DS_Store
 .cache/
 compile_commands.json
+include/csv.hpp
+include/csv.h
