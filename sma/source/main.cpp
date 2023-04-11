@@ -1,5 +1,4 @@
 #include <assert.h>
-#include <clickhouse/client.h>
 #include <time.h>
 
 #include <cstdio>
