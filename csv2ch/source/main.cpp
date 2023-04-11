@@ -1,3 +1,4 @@
+#include <acquiremoney/csv2ch.h>
 #include <acquiremoney/greeter.h>
 #include <acquiremoney/version.h>
 
@@ -7,24 +8,13 @@
 #include <unordered_map>
 
 auto main(int argc, char** argv) -> int {
-  const std::unordered_map<std::string, greeter::LanguageCode> languages{
-      {"en", greeter::LanguageCode::EN},
-      {"de", greeter::LanguageCode::DE},
-      {"es", greeter::LanguageCode::ES},
-      {"fr", greeter::LanguageCode::FR},
-  };
-
-  cxxopts::Options options(*argv, "A program to welcome the world!");
-
-  std::string language;
-  std::string name;
-
+  cxxopts::Options options(*argv, "A program to import data to clickhouse from csv files!");
   // clang-format off
   options.add_options()
     ("h,help", "Show help")
     ("v,version", "Print the current version number")
-    ("n,name", "Name to greet", cxxopts::value(name)->default_value("World"))
-    ("l,lang", "Language code to use", cxxopts::value(language)->default_value("en"))
+    ("d,daily", "导入daily data", cxxopts::value<bool>()->default_value("false"))
+    ("t,tick", "导入tick data", cxxopts::value<bool>()->default_value("false"))
   ;
   // clang-format on
 
@@ -39,15 +29,13 @@ auto main(int argc, char** argv) -> int {
     std::cout << "Greeter, version " << ACQUIREMONEY_VERSION << std::endl;
     return 0;
   }
-
-  auto langIt = languages.find(language);
-  if (langIt == languages.end()) {
-    std::cerr << "unknown language code: " << language << std::endl;
-    return 1;
+  bool daily = result["daily"].as<bool>();
+  if (daily) {
+    daily_data();
   }
-
-  greeter::Greeter greeter(name);
-  std::cout << greeter.greet(langIt->second) << std::endl;
+  if (result["tick"].as<bool>()) {
+    tick_data();
+  }
 
   return 0;
 }

@@ -1,19 +1,13 @@
+#include <acquiremoney/csv2ch.h>
+#include <clickhouse/client.h>
 #include <clickhouse/columns/decimal.h>
 #include <clickhouse/columns/numeric.h>
 #include <clickhouse/columns/string.h>
+#include <csv.h>
 
-#include <filesystem>
 #include <iostream>
 #include <ostream>
 #include <string>
-
-namespace fs = std::filesystem;
-
-#include <clickhouse/client.h>
-
-#include "csv.h"
-
-std::string get_stem(const fs::path& p) { return p.stem().string(); }
 
 auto daily_data() -> int {
   clickhouse::Client client(clickhouse::ClientOptions().SetHost("localhost").SetPort(19000));
