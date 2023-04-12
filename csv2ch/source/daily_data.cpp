@@ -11,26 +11,12 @@
 
 auto daily_data() -> int {
   clickhouse::Client client(clickhouse::ClientOptions().SetHost("localhost").SetPort(19000));
-  // CREATE OR REPLACE TABLE daily_data (
-  // symbol String,
-  // date String,
-  // open Float64,
-  // high Float64,
-  // low Float64,
-  // close Float64,
-  // volume Float64,
-  // outstanding_share Float64,
-  // turnover Float64,
-  // updated_at DateTime('Asia/Shanghai') DEFAULT now(),
-  // updated_at_date Date DEFAULT toDate(updated_at)
-  // ) ENGINE = MergeTree() ORDER BY (symbol, date);
   std::string path = "/data/stock/daily_data_qfq";
   for (const auto& entry : fs::directory_iterator(path)) {
-    break;
     clickhouse::Block block;
 
-    auto symbol = std::make_shared<clickhouse::ColumnString>();
-    auto _date = std::make_shared<clickhouse::ColumnString>();
+    auto symbol = std::make_shared<clickhouse::ColumnFixedString>(8);
+    auto _date = std::make_shared<clickhouse::ColumnInt32>();
     auto _open = std::make_shared<clickhouse::ColumnFloat64>();
     auto _high = std::make_shared<clickhouse::ColumnFloat64>();
     auto _low = std::make_shared<clickhouse::ColumnFloat64>();
@@ -42,7 +28,7 @@ auto daily_data() -> int {
     io::CSVReader<8> in(entry.path().c_str());
     in.read_header(io::ignore_extra_column, "date", "open", "high", "low", "close", "volume",
                    "outstanding_share", "turnover");
-    std::string date;
+    std::string date_str;
     long double open;
     long double high;
     long double low;
@@ -50,7 +36,13 @@ auto daily_data() -> int {
     long double volume;
     long double outstanding_share;
     long double turnover;
-    while (in.read_row(date, open, high, low, close, volume, outstanding_share, turnover)) {
+    while (in.read_row(date_str, open, high, low, close, volume, outstanding_share, turnover)) {
+      std::string x = "-", y = "";
+      size_t pos;
+      while ((pos = date_str.find(x)) != std::string::npos) {
+        date_str.replace(pos, 1, y);
+      }
+      auto date = std::stoi(date_str);
       symbol->Append(get_stem(entry));
       _date->Append(date);
       _open->Append(open);
