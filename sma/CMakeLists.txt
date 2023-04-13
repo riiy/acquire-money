@@ -21,11 +21,6 @@ CPMAddPackage(
 )
 CPMAddPackage("gh:TheLartians/Format.cmake@1.7.3")
 
-file(DOWNLOAD
-     https://raw.githubusercontent.com/vincentlaucsb/csv-parser/master/single_include/csv.hpp
-     "../include/csv.hpp"
-)
-
 CPMAddPackage(NAME AcquireMoney SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
 
 file(GLOB sources CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp)

@@ -9,7 +9,6 @@
 #include <string>
 
 #include "acquiremoney/version.h"
-#include "csv.hpp"
 #include "ta-lib/ta_libc.h"
 
 auto main(int argc, char** argv) -> int {
@@ -35,17 +34,8 @@ auto main(int argc, char** argv) -> int {
     return 0;
   }
 
-  csv::CSVReader reader("/data/stock/index/sh510050.csv");
-  std::cout << reader.n_rows() << std::endl;
   TA_Real close_price_array[5000] = {0};
 
-  for (auto& row : reader) {
-    // Note: Can also use index of column with [] operator
-    // sum += row["open"].get<double>();
-    close_price_array[row[""].get<int>()] = row["close"].get<double>();
-    std::cout << row["date"].get_sv() << std::endl;
-  }
-  std::cout << reader.n_rows() << std::endl;
   std::cout << "ta-lib test" << std::endl;
 
   // init ta-lib context
@@ -57,8 +47,8 @@ auto main(int argc, char** argv) -> int {
   TA_Integer out_begin = 0;
   TA_Integer out_nb_element = 0;
 
-  retcode = TA_MA(0, reader.n_rows(), &close_price_array[0], 20, TA_MAType_SMA, &out_begin,
-                  &out_nb_element, &out[0]);
+  retcode = TA_MA(0, 500, &close_price_array[0], 20, TA_MAType_SMA, &out_begin, &out_nb_element,
+                  &out[0]);
 
   assert(retcode == TA_SUCCESS);
 
