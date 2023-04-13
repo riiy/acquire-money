@@ -3,6 +3,9 @@
 /cpm_modules
 .DS_Store
 .cache/
+# compile_commands.json link
 compile_commands.json
-include/csv.hpp
+
+# keep update to new version from cmake download file
 include/csv.h
+include/httplib.h
