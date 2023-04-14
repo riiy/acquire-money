@@ -38,10 +38,10 @@ CPMAddPackage(
 )
 CPMAddPackage("gh:ClickHouse/clickhouse-cpp@2.3.0")
 file(DOWNLOAD https://raw.githubusercontent.com/yhirose/cpp-httplib/master/httplib.h
-     "../include/httplib.h"
+     "${CMAKE_CURRENT_SOURCE_DIR}/include/httplib.h"
 )
 file(DOWNLOAD https://raw.githubusercontent.com/ben-strasser/fast-cpp-csv-parser/master/csv.h
-     "../include/csv.h"
+     "${CMAKE_CURRENT_SOURCE_DIR}/include/csv.h"
 )
 
 # ---- Add source files ----
