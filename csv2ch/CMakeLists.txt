@@ -20,7 +20,6 @@ CPMAddPackage(
   OPTIONS "CXXOPTS_BUILD_EXAMPLES NO" "CXXOPTS_BUILD_TESTS NO" "CXXOPTS_ENABLE_INSTALL YES"
 )
 CPMAddPackage("gh:TheLartians/Format.cmake@1.7.3")
-CPMAddPackage("gh:ClickHouse/clickhouse-cpp@2.3.0")
 find_package(Threads REQUIRED)
 
 CPMAddPackage(NAME AcquireMoney SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)

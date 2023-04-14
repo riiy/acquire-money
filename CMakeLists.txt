@@ -36,7 +36,7 @@ CPMAddPackage(
   GITHUB_REPOSITORY fmtlib/fmt
   OPTIONS "FMT_INSTALL YES" # create an installable target
 )
-
+CPMAddPackage("gh:ClickHouse/clickhouse-cpp@2.3.0")
 file(DOWNLOAD https://raw.githubusercontent.com/yhirose/cpp-httplib/master/httplib.h
      "../include/httplib.h"
 )
@@ -62,7 +62,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 target_compile_options(${PROJECT_NAME} PUBLIC "$<$<COMPILE_LANG_AND_ID:CXX,MSVC>:/permissive->")
 
 # Link dependencies
-target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
+target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt $<BUILD_INTERFACE:clickhouse-cpp-lib>)
 
 target_include_directories(
   ${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
