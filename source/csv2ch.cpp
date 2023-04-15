@@ -37,10 +37,10 @@ auto tick_data() -> int {
         in.set_header("seq", "time", "price", "change", "volume", "turnover", "kind");
         std::string seq;
         std::string time;
-        long double price;
-        long double change;
-        long double volume;
-        long double turnover;
+        double price;
+        double change;
+        double volume;
+        double turnover;
         std::string kind;
         while (in.read_row(seq, time, price, change, volume, turnover, kind)) {
           _symbol->Append(symbol);
@@ -84,16 +84,15 @@ auto daily_data() -> int {
     auto _turnover = std::make_shared<clickhouse::ColumnFloat64>();
 
     io::CSVReader<8> in(entry.path().c_str());
-    in.read_header(io::ignore_extra_column, "date", "open", "high", "low", "close", "volume",
-                   "outstanding_share", "turnover");
+    in.read_header(io::ignore_extra_column, "date", "open", "high", "low", "close", "volume", "outstanding_share", "turnover");
     std::string date_str;
-    long double open;
-    long double high;
-    long double low;
-    long double close;
-    long double volume;
-    long double outstanding_share;
-    long double turnover;
+    double open;
+    double high;
+    double low;
+    double close;
+    double volume;
+    double outstanding_share;
+    double turnover;
     while (in.read_row(date_str, open, high, low, close, volume, outstanding_share, turnover)) {
       std::string x = "-", y = "";
       size_t pos;
