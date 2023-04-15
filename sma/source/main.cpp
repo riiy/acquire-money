@@ -47,8 +47,7 @@ auto main(int argc, char** argv) -> int {
   TA_Integer out_begin = 0;
   TA_Integer out_nb_element = 0;
 
-  retcode = TA_MA(0, 500, &close_price_array[0], 20, TA_MAType_SMA, &out_begin, &out_nb_element,
-                  &out[0]);
+  retcode = TA_MA(0, 500, &close_price_array[0], 20, TA_MAType_SMA, &out_begin, &out_nb_element, &out[0]);
 
   assert(retcode == TA_SUCCESS);
 

@@ -34,9 +34,7 @@ endif()
 
 file(GLOB sources CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp)
 add_executable(${PROJECT_NAME} ${sources})
-target_link_libraries(
-  ${PROJECT_NAME} doctest::doctest AcquireMoney::AcquireMoney spdlog::spdlog_header_only
-)
+target_link_libraries(${PROJECT_NAME} doctest::doctest AcquireMoney::AcquireMoney spdlog::spdlog_header_only)
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 
 # enable compiler warnings
@@ -53,8 +51,7 @@ endif()
 
 enable_testing()
 
-# Note: doctest and similar testing frameworks can automatically configure CMake tests. For other
-# testing frameworks add the tests target instead: add_test(NAME ${PROJECT_NAME} COMMAND
+# Note: doctest and similar testing frameworks can automatically configure CMake tests. For other testing frameworks add the tests target instead: add_test(NAME ${PROJECT_NAME} COMMAND
 # ${PROJECT_NAME})
 
 include(${doctest_SOURCE_DIR}/scripts/cmake/doctest.cmake)
