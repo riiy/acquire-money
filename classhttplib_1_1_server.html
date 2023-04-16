@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>httplib::Server class | AcquireMoney</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">AcquireMoney</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="pages.html">Pages</a>
+              <ol>
+                <li><a href="about.html">About</a></li>
+              </ol>
+            </li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacehttplib.html">httplib</a>::<wbr/></span>Server <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="httplib_8h.html">&lt;httplib.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+                <li><a href="#pro-methods">Protected functions</a></li>
+                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#pri-methods">Private functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a68cf8c175834bde61120ac4216ea943b">
+              <span class="m-doc-wrap-bumper">enum class <a href="#a68cf8c175834bde61120ac4216ea943b" class="m-doc-self">HandlerResponse</a> { </span><span class="m-doc-wrap"><a href="#a68cf8c175834bde61120ac4216ea943ba827211270de454ea3e0df8f57995efed" class="m-doc">Handled</a>,
+              <a href="#a68cf8c175834bde61120ac4216ea943ba6fe9e16b804e1ce4ac5868be60615007" class="m-doc">Unhandled</a> }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7dd90fb4275b663feff97966b3581b9e">
+              using <a href="#a7dd90fb4275b663feff97966b3581b9e" class="m-doc-self">Handler</a> = std::function&lt;void(const <a href="structhttplib_1_1_request.html" class="m-doc">Request</a>&amp;, <a href="structhttplib_1_1_response.html" class="m-doc">Response</a>&amp;)&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa29460e3dffc0be70c85f218122dc994">
+              using <a href="#aa29460e3dffc0be70c85f218122dc994" class="m-doc-self">ExceptionHandler</a> = std::function&lt;void(const <a href="structhttplib_1_1_request.html" class="m-doc">Request</a>&amp;, <a href="structhttplib_1_1_response.html" class="m-doc">Response</a>&amp;, std::exception_ptr ep)&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1dff40a6ecd0b29a7b7d850e1666477c">
+              using <a href="#a1dff40a6ecd0b29a7b7d850e1666477c" class="m-doc-self">HandlerWithResponse</a> = std::function&lt;<a href="classhttplib_1_1_server.html#a68cf8c175834bde61120ac4216ea943b" class="m-doc">HandlerResponse</a>(const <a href="structhttplib_1_1_request.html" class="m-doc">Request</a>&amp;, <a href="structhttplib_1_1_response.html" class="m-doc">Response</a>&amp;)&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a494a53d50a549a0e292fdf4485a5b5f8">
+              using <a href="#a494a53d50a549a0e292fdf4485a5b5f8" class="m-doc-self">HandlerWithContentReader</a> = std::function&lt;void(const <a href="structhttplib_1_1_request.html" class="m-doc">Request</a>&amp;, <a href="structhttplib_1_1_response.html" class="m-doc">Response</a>&amp;, const <a href="classhttplib_1_1_content_reader.html" class="m-doc">ContentReader</a>&amp;content_reader)&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a771b94c22126548bb00e8438738adae2">
+              using <a href="#a771b94c22126548bb00e8438738adae2" class="m-doc-self">Expect100ContinueHandler</a> = std::function&lt;int(const <a href="structhttplib_1_1_request.html" class="m-doc">Request</a>&amp;, <a href="structhttplib_1_1_response.html" class="m-doc">Response</a>&amp;)&gt;
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a55b2afc239586d61c9208039efd970ae">
+              <span class="m-doc-wrap-bumper"><a href="#a55b2afc239586d61c9208039efd970ae" class="m-doc-self">Server</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af115868f3665c97326770b7fa87c6cce">
+              <span class="m-doc-wrap-bumper"><a href="#af115868f3665c97326770b7fa87c6cce" class="m-doc-self">~Server</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a4f02314a47adbae984a7483e8e820c05">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4f02314a47adbae984a7483e8e820c05" class="m-doc-self">is_valid</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a74a4a4a3142e60854e8e24da96cdbcca">
+              <span class="m-doc-wrap-bumper">auto <a href="#a74a4a4a3142e60854e8e24da96cdbcca" class="m-doc-self">Get</a>(</span><span class="m-doc-wrap">const std::string&amp; pattern,
+              <a href="classhttplib_1_1_server.html#a7dd90fb4275b663feff97966b3581b9e" class="m-doc">Handler</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a94c2dad6da1c6e4e02095a692a5b02a8">
+              <span class="m-doc-wrap-bumper">auto <a href="#a94c2dad6da1c6e4e02095a692a5b02a8" class="m-doc-self">Post</a>(</span><span class="m-doc-wrap">const std::string&amp; pattern,
+              <a href="classhttplib_1_1_server.html#a7dd90fb4275b663feff97966b3581b9e" class="m-doc">Handler</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab454f425b92fc5a857cb60bb322727dd">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab454f425b92fc5a857cb60bb322727dd" class="m-doc-self">Post</a>(</span><span class="m-doc-wrap">const std::string&amp; pattern,
+              <a href="classhttplib_1_1_server.html#a494a53d50a549a0e292fdf4485a5b5f8" class="m-doc">HandlerWithContentReader</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1cf7f1accef56826b2bf09117f1d4103">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1cf7f1accef56826b2bf09117f1d4103" class="m-doc-self">Put</a>(</span><span class="m-doc-wrap">const std::string&amp; pattern,
+              <a href="classhttplib_1_1_server.html#a7dd90fb4275b663feff97966b3581b9e" class="m-doc">Handler</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2d450f42f8b6fc6ababec2fcaca22d50">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2d450f42f8b6fc6ababec2fcaca22d50" class="m-doc-self">Put</a>(</span><span class="m-doc-wrap">const std::string&amp; pattern,
+              <a href="classhttplib_1_1_server.html#a494a53d50a549a0e292fdf4485a5b5f8" class="m-doc">HandlerWithContentReader</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6c72621c8b7ab935c7a3872999eeb692">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6c72621c8b7ab935c7a3872999eeb692" class="m-doc-self">Patch</a>(</span><span class="m-doc-wrap">const std::string&amp; pattern,
+              <a href="classhttplib_1_1_server.html#a7dd90fb4275b663feff97966b3581b9e" class="m-doc">Handler</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a865253d431defef7a894e58fe41c92a0">
+              <span class="m-doc-wrap-bumper">auto <a href="#a865253d431defef7a894e58fe41c92a0" class="m-doc-self">Patch</a>(</span><span class="m-doc-wrap">const std::string&amp; pattern,
+              <a href="classhttplib_1_1_server.html#a494a53d50a549a0e292fdf4485a5b5f8" class="m-doc">HandlerWithContentReader</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a20a2348fa99b1107853dda9ef9b3e6e2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a20a2348fa99b1107853dda9ef9b3e6e2" class="m-doc-self">Delete</a>(</span><span class="m-doc-wrap">const std::string&amp; pattern,
+              <a href="classhttplib_1_1_server.html#a7dd90fb4275b663feff97966b3581b9e" class="m-doc">Handler</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a255eb85d73a38405c9a46f2b16c9cb43">
+              <span class="m-doc-wrap-bumper">auto <a href="#a255eb85d73a38405c9a46f2b16c9cb43" class="m-doc-self">Delete</a>(</span><span class="m-doc-wrap">const std::string&amp; pattern,
+              <a href="classhttplib_1_1_server.html#a494a53d50a549a0e292fdf4485a5b5f8" class="m-doc">HandlerWithContentReader</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4e5873454e8a2003810e80511e9e2830">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4e5873454e8a2003810e80511e9e2830" class="m-doc-self">Options</a>(</span><span class="m-doc-wrap">const std::string&amp; pattern,
+              <a href="classhttplib_1_1_server.html#a7dd90fb4275b663feff97966b3581b9e" class="m-doc">Handler</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a36c137f4b03c3d1128b1e07d1a029169">
+              <span class="m-doc-wrap-bumper">auto <a href="#a36c137f4b03c3d1128b1e07d1a029169" class="m-doc-self">set_base_dir</a>(</span><span class="m-doc-wrap">const std::string&amp; dir,
+              const std::string&amp; mount_point = std::string()) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac6d41f4b6066757830b91064a0043a3e">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac6d41f4b6066757830b91064a0043a3e" class="m-doc-self">set_mount_point</a>(</span><span class="m-doc-wrap">const std::string&amp; mount_point,
+              const std::string&amp; dir,
+              <a href="namespacehttplib.html#a6fb30cf4bb44485bee38481e46ab8dc5" class="m-doc">Headers</a> headers = <a href="namespacehttplib.html#a6fb30cf4bb44485bee38481e46ab8dc5" class="m-doc">Headers</a>()) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa6937f9f0804b55f1a0af1673118acd5">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa6937f9f0804b55f1a0af1673118acd5" class="m-doc-self">remove_mount_point</a>(</span><span class="m-doc-wrap">const std::string&amp; mount_point) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af3bca9e3d68dcc860ba75c1b6e5241ea">
+              <span class="m-doc-wrap-bumper">auto <a href="#af3bca9e3d68dcc860ba75c1b6e5241ea" class="m-doc-self">set_file_extension_and_mimetype_mapping</a>(</span><span class="m-doc-wrap">const std::string&amp; ext,
+              const std::string&amp; mime) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7b6925d325402d78965f77588044b741">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7b6925d325402d78965f77588044b741" class="m-doc-self">set_file_request_handler</a>(</span><span class="m-doc-wrap"><a href="classhttplib_1_1_server.html#a7dd90fb4275b663feff97966b3581b9e" class="m-doc">Handler</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2811feccb162bc6da49b4abe5b82aa62">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2811feccb162bc6da49b4abe5b82aa62" class="m-doc-self">set_error_handler</a>(</span><span class="m-doc-wrap"><a href="classhttplib_1_1_server.html#a1dff40a6ecd0b29a7b7d850e1666477c" class="m-doc">HandlerWithResponse</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a76dfb4c984a5b96aedb839d19c8f86d4">
+              <span class="m-doc-wrap-bumper">auto <a href="#a76dfb4c984a5b96aedb839d19c8f86d4" class="m-doc-self">set_error_handler</a>(</span><span class="m-doc-wrap"><a href="classhttplib_1_1_server.html#a7dd90fb4275b663feff97966b3581b9e" class="m-doc">Handler</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad66316cc550d27081398c69be8e38935">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad66316cc550d27081398c69be8e38935" class="m-doc-self">set_exception_handler</a>(</span><span class="m-doc-wrap"><a href="classhttplib_1_1_server.html#aa29460e3dffc0be70c85f218122dc994" class="m-doc">ExceptionHandler</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a26bbbe58ee42f3eef5703015b16c696a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a26bbbe58ee42f3eef5703015b16c696a" class="m-doc-self">set_pre_routing_handler</a>(</span><span class="m-doc-wrap"><a href="classhttplib_1_1_server.html#a1dff40a6ecd0b29a7b7d850e1666477c" class="m-doc">HandlerWithResponse</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9399eb3235f737c934618b9f8f16f7a6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9399eb3235f737c934618b9f8f16f7a6" class="m-doc-self">set_post_routing_handler</a>(</span><span class="m-doc-wrap"><a href="classhttplib_1_1_server.html#a7dd90fb4275b663feff97966b3581b9e" class="m-doc">Handler</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ada7a1b8419547c9ea72f21ecb6d1f2d3">
+              <span class="m-doc-wrap-bumper">auto <a href="#ada7a1b8419547c9ea72f21ecb6d1f2d3" class="m-doc-self">set_expect_100_continue_handler</a>(</span><span class="m-doc-wrap"><a href="classhttplib_1_1_server.html#a771b94c22126548bb00e8438738adae2" class="m-doc">Expect100ContinueHandler</a> handler) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab3f469bd07871a357da96de772ec7987">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab3f469bd07871a357da96de772ec7987" class="m-doc-self">set_logger</a>(</span><span class="m-doc-wrap"><a href="namespacehttplib.html#a45a8a23366055bec6273922974cff156" class="m-doc">Logger</a> logger) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a964e626f335e98b5cd20902cf8088d1a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a964e626f335e98b5cd20902cf8088d1a" class="m-doc-self">set_address_family</a>(</span><span class="m-doc-wrap">int family) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3fcd849f27f63fec7f62a6d8cc7d8435">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3fcd849f27f63fec7f62a6d8cc7d8435" class="m-doc-self">set_tcp_nodelay</a>(</span><span class="m-doc-wrap">bool on) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac6e87e1cedccef84813a4638694acd5c">
+              <span class="m-doc-wrap-bumper">auto <a href="#ac6e87e1cedccef84813a4638694acd5c" class="m-doc-self">set_socket_options</a>(</span><span class="m-doc-wrap"><a href="namespacehttplib.html#a02305f842f48963eb2ed425ee5d1655d" class="m-doc">SocketOptions</a> socket_options) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6db0eaa0afd802fc59d845688f8ed8f3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6db0eaa0afd802fc59d845688f8ed8f3" class="m-doc-self">set_default_headers</a>(</span><span class="m-doc-wrap"><a href="namespacehttplib.html#a6fb30cf4bb44485bee38481e46ab8dc5" class="m-doc">Headers</a> headers) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af8905c1e99bdc3a0b353b8c3985fe7fc">
+              <span class="m-doc-wrap-bumper">auto <a href="#af8905c1e99bdc3a0b353b8c3985fe7fc" class="m-doc-self">set_keep_alive_max_count</a>(</span><span class="m-doc-wrap">size_t count) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aae7a9a5c73dc8cd71003da7d5d1cbd7d">
+              <span class="m-doc-wrap-bumper">auto <a href="#aae7a9a5c73dc8cd71003da7d5d1cbd7d" class="m-doc-self">set_keep_alive_timeout</a>(</span><span class="m-doc-wrap">time_t sec) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af9522ea3e32aa5b2e1cb9c7c93cf9473">
+              <span class="m-doc-wrap-bumper">auto <a href="#af9522ea3e32aa5b2e1cb9c7c93cf9473" class="m-doc-self">set_read_timeout</a>(</span><span class="m-doc-wrap">time_t sec,
+              time_t usec = 0) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abd1a933ed52d307f3c6625dbe20f6772">
+              <div class="m-doc-template">template&lt;class Rep, class Period&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#abd1a933ed52d307f3c6625dbe20f6772" class="m-doc-self">set_read_timeout</a>(</span><span class="m-doc-wrap">const std::chrono::duration&lt;Rep, Period&gt;&amp; duration) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a286064a2bc6aa22cdd7e022f093deaad">
+              <span class="m-doc-wrap-bumper">auto <a href="#a286064a2bc6aa22cdd7e022f093deaad" class="m-doc-self">set_write_timeout</a>(</span><span class="m-doc-wrap">time_t sec,
+              time_t usec = 0) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4b23a94ce77ac1ede2c5b67a6b369064">
+              <div class="m-doc-template">template&lt;class Rep, class Period&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4b23a94ce77ac1ede2c5b67a6b369064" class="m-doc-self">set_write_timeout</a>(</span><span class="m-doc-wrap">const std::chrono::duration&lt;Rep, Period&gt;&amp; duration) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9604f44fb0bd01389635442e4f1f9e77">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9604f44fb0bd01389635442e4f1f9e77" class="m-doc-self">set_idle_interval</a>(</span><span class="m-doc-wrap">time_t sec,
+              time_t usec = 0) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aee285a502bbfa6c5ae8e1915c7d4fde4">
+              <div class="m-doc-template">template&lt;class Rep, class Period&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#aee285a502bbfa6c5ae8e1915c7d4fde4" class="m-doc-self">set_idle_interval</a>(</span><span class="m-doc-wrap">const std::chrono::duration&lt;Rep, Period&gt;&amp; duration) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4d6c37f9ae370d54513775082340a255">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4d6c37f9ae370d54513775082340a255" class="m-doc-self">set_payload_max_length</a>(</span><span class="m-doc-wrap">size_t length) -&gt; <a href="classhttplib_1_1_server.html" class="m-doc">Server</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5bde755667689ba58fa80eedcc4fd2f3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5bde755667689ba58fa80eedcc4fd2f3" class="m-doc-self">bind_to_port</a>(</span><span class="m-doc-wrap">const std::string&amp; host,
+              int port,
+              int socket_flags = 0) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5535b14de270d9bc64deae069a55592a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5535b14de270d9bc64deae069a55592a" class="m-doc-self">bind_to_any_port</a>(</span><span class="m-doc-wrap">const std::string&amp; host,
+              int socket_flags = 0) -&gt; int</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3e50f66dfe531fe18590aa421ef2595f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3e50f66dfe531fe18590aa421ef2595f" class="m-doc-self">listen_after_bind</a>(</span><span class="m-doc-wrap">) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a319d49f06dc5484b234bcc1f8e637fd3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a319d49f06dc5484b234bcc1f8e637fd3" class="m-doc-self">listen</a>(</span><span class="m-doc-wrap">const std::string&amp; host,
+              int port,
+              int socket_flags = 0) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a93a632ffae8eea0380daaac719cba06c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a93a632ffae8eea0380daaac719cba06c" class="m-doc-self">is_running</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9365350e22a3baec09a711ee1ec8ecb4">
+              <span class="m-doc-wrap-bumper">void <a href="#a9365350e22a3baec09a711ee1ec8ecb4" class="m-doc-self">wait_until_ready</a>(</span><span class="m-doc-wrap">) const</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0f2a6a638ad99012886c87c9786a43b3">
+              <span class="m-doc-wrap-bumper">void <a href="#a0f2a6a638ad99012886c87c9786a43b3" class="m-doc-self">stop</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="ab02ba5727ab7e9c757f329d557e8d60f">
+              std::function&lt;<a href="classhttplib_1_1_task_queue.html" class="m-doc">TaskQueue</a>*(void)&gt; <a href="#ab02ba5727ab7e9c757f329d557e8d60f" class="m-doc-self">new_task_queue</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-methods">
+          <h2><a href="#pro-methods">Protected functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a4e7c7c79cced3d61082df30b3eb97ed2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4e7c7c79cced3d61082df30b3eb97ed2" class="m-doc-self">process_request</a>(</span><span class="m-doc-wrap"><a href="classhttplib_1_1_stream.html" class="m-doc">Stream</a>&amp; strm,
+              bool close_connection,
+              bool&amp; connection_closed,
+              const std::function&lt;void(<a href="structhttplib_1_1_request.html" class="m-doc">Request</a>&amp;)&gt;&amp; setup_request) -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pro-attribs">
+          <h2><a href="#pro-attribs">Protected variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a8bc06c5e7e93632a22db8fd35f68b4a1">
+              std::atomic&lt;<a href="httplib_8h.html#a84d69664998f9fc285147c6d1382a6fb" class="m-doc">socket_<wbr />t</a>&gt; <a href="#a8bc06c5e7e93632a22db8fd35f68b4a1" class="m-doc-self">svr_sock_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2a39446892282230d483cd137c56e4f7">
+              size_t <a href="#a2a39446892282230d483cd137c56e4f7" class="m-doc-self">keep_alive_max_count_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a65cd6213eca9dedec862e9477436a625">
+              time_t <a href="#a65cd6213eca9dedec862e9477436a625" class="m-doc-self">keep_alive_timeout_sec_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac9f203c13fe12f2ecb04386df44f6081">
+              time_t <a href="#ac9f203c13fe12f2ecb04386df44f6081" class="m-doc-self">read_timeout_sec_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a03a97129a6573eab65a00e5e190e2f7a">
+              time_t <a href="#a03a97129a6573eab65a00e5e190e2f7a" class="m-doc-self">read_timeout_usec_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a30362cb23ea93927768bc2a1a93e61bb">
+              time_t <a href="#a30362cb23ea93927768bc2a1a93e61bb" class="m-doc-self">write_timeout_sec_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5fabd1ab73b311873c2e6d555d8ed6f8">
+              time_t <a href="#a5fabd1ab73b311873c2e6d555d8ed6f8" class="m-doc-self">write_timeout_usec_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5a100e3e30db5c877c093c035b434a0e">
+              time_t <a href="#a5a100e3e30db5c877c093c035b434a0e" class="m-doc-self">idle_interval_sec_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a29c76072511d044af75f81140e7ae34e">
+              time_t <a href="#a29c76072511d044af75f81140e7ae34e" class="m-doc-self">idle_interval_usec_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aef94224ccf466318570d0309faa6c721">
+              size_t <a href="#aef94224ccf466318570d0309faa6c721" class="m-doc-self">payload_max_length_</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pri-methods">
+          <h2><a href="#pri-methods">Private functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a28221db99b5a35e45515553fdb9458a0">
+              <span class="m-doc-wrap-bumper">auto <a href="#a28221db99b5a35e45515553fdb9458a0" class="m-doc-self">process_and_close_socket</a>(</span><span class="m-doc-wrap"><a href="httplib_8h.html#a84d69664998f9fc285147c6d1382a6fb" class="m-doc">socket_<wbr />t</a> sock) -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>AcquireMoney. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

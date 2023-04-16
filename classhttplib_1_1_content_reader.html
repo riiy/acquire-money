@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About | AcquireMoney</title>
+  <title>httplib::ContentReader class | AcquireMoney</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,7 +27,7 @@
             <li>
               <a href="pages.html">Pages</a>
               <ol>
-                <li><a href="about.html" id="m-navbar-current">About</a></li>
+                <li><a href="about.html">About</a></li>
               </ol>
             </li>
             <li><a href="namespaces.html">Namespaces</a></li>
@@ -49,9 +49,74 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          About
+          <span class="m-breadcrumb"><a href="namespacehttplib.html">httplib</a>::<wbr/></span>ContentReader <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="httplib_8h.html">&lt;httplib.h&gt;</a></div>
         </h1>
-<section id="doc"><h2><a href="#doc">AcquireMoney Documentation</a></h2><p>This is the auto-generated documentation for the initial project of the AcquireMoney. It shows how we can use Doxygen to automatically build a browsable documentation for your projects.</p></section>
+        <p><span></span></p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="abc8da0da3f914be4fb5cc3bb67d8c443">
+              using <a href="#abc8da0da3f914be4fb5cc3bb67d8c443" class="m-doc-self">Reader</a> = std::function&lt;bool(<a href="namespacehttplib.html#ad7425937de0bafb891b0b7cae87dc368" class="m-doc">ContentReceiver</a> receiver)&gt;
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6239248caa23f835547b77fded674db6">
+              using <a href="#a6239248caa23f835547b77fded674db6" class="m-doc-self">MultipartReader</a> = std::function&lt;bool(<a href="namespacehttplib.html#a252743256dcf78b19df63572307303da" class="m-doc">MultipartContentHeader</a> header, <a href="namespacehttplib.html#ad7425937de0bafb891b0b7cae87dc368" class="m-doc">ContentReceiver</a> receiver)&gt;
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="ad236fd49b84c9af66001deebe9d41e55">
+              <span class="m-doc-wrap-bumper"><a href="#ad236fd49b84c9af66001deebe9d41e55" class="m-doc-self">ContentReader</a>(</span><span class="m-doc-wrap"><a href="classhttplib_1_1_content_reader.html#abc8da0da3f914be4fb5cc3bb67d8c443" class="m-doc">Reader</a> reader,
+              <a href="classhttplib_1_1_content_reader.html#a6239248caa23f835547b77fded674db6" class="m-doc">MultipartReader</a> multipart_reader)</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a596c6d863a6de135905120f180490363">
+              <span class="m-doc-wrap-bumper">auto <a href="#a596c6d863a6de135905120f180490363" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap"><a href="namespacehttplib.html#a252743256dcf78b19df63572307303da" class="m-doc">MultipartContentHeader</a> header,
+              <a href="namespacehttplib.html#ad7425937de0bafb891b0b7cae87dc368" class="m-doc">ContentReceiver</a> receiver) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa6f3ec4f7b8669f1f1249a5fba969d5a">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa6f3ec4f7b8669f1f1249a5fba969d5a" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap"><a href="namespacehttplib.html#ad7425937de0bafb891b0b7cae87dc368" class="m-doc">ContentReceiver</a> receiver) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a1fb51ae3a8bc275f1ef81ab01e85d86b">
+              <a href="classhttplib_1_1_content_reader.html#abc8da0da3f914be4fb5cc3bb67d8c443" class="m-doc">Reader</a> <a href="#a1fb51ae3a8bc275f1ef81ab01e85d86b" class="m-doc-self">reader_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af47ff64635539ffefa4c0ffb46b0e140">
+              <a href="classhttplib_1_1_content_reader.html#a6239248caa23f835547b77fded674db6" class="m-doc">MultipartReader</a> <a href="#af47ff64635539ffefa4c0ffb46b0e140" class="m-doc-self">multipart_reader_</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
       </div>
     </div>
   </div>

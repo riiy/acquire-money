@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>acquiremoney/ directory | AcquireMoney</title>
+  <title>httplib::detail::SocketStream class | AcquireMoney</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,7 +49,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          acquiremoney<span class="m-breadcrumb">/</span> <span class="m-thin">directory</span>
+          <span class="m-breadcrumb"><a href="namespacehttplib.html">httplib</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacehttplib_1_1detail.html">detail</a>::<wbr/></span>SocketStream <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="httplib_8h.html">&lt;httplib.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -58,19 +59,73 @@
             <li>
               Reference
               <ul>
-                <li><a href="#files">Files</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="files">
-          <h2><a href="#files">Files</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
-            <dt>file <a href="csv2ch_8h.html" class="m-doc">csv2ch.h</a></dt>
+            <dt>
+              class <a href="classhttplib_1_1_stream.html" class="m-doc">httplib::Stream</a>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="greeter_8h.html" class="m-doc">greeter.h</a></dt>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a47ee2245a68f78d1331c429d1b8cff14">
+              <span class="m-doc-wrap-bumper"><a href="#a47ee2245a68f78d1331c429d1b8cff14" class="m-doc-self">SocketStream</a>(</span><span class="m-doc-wrap"><a href="httplib_8h.html#a84d69664998f9fc285147c6d1382a6fb" class="m-doc">socket_<wbr />t</a> sock,
+              time_t read_timeout_sec,
+              time_t read_timeout_usec,
+              time_t write_timeout_sec,
+              time_t write_timeout_usec)</span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="stock__feature_8h.html" class="m-doc">stock_feature.h</a></dt>
+            <dt id="ad53aee236db4c02938706d7f8cfe089e">
+              <span class="m-doc-wrap-bumper"><a href="#ad53aee236db4c02938706d7f8cfe089e" class="m-doc-self">~SocketStream</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a54ef15b31ba398e33086574d412fb316">
+              <span class="m-doc-wrap-bumper">auto <a href="#a54ef15b31ba398e33086574d412fb316" class="m-doc-self">is_readable</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa5bf41c972f307030f34de1c7dbb25d9">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa5bf41c972f307030f34de1c7dbb25d9" class="m-doc-self">is_writable</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7fff1278536273efeb9c0e9adad57d62">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7fff1278536273efeb9c0e9adad57d62" class="m-doc-self">read</a>(</span><span class="m-doc-wrap">char* ptr,
+              size_t size) -&gt; ssize_t <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5758d225d89517db2a637fac308f041a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5758d225d89517db2a637fac308f041a" class="m-doc-self">write</a>(</span><span class="m-doc-wrap">const char* ptr,
+              size_t size) -&gt; ssize_t <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a10edcbf718672c3be447eaffa5bb25df">
+              <span class="m-doc-wrap-bumper">void <a href="#a10edcbf718672c3be447eaffa5bb25df" class="m-doc-self">get_remote_ip_and_port</a>(</span><span class="m-doc-wrap">std::string&amp; ip,
+              int&amp; port) const <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a79225a858c34f7084e2db0015e55945a">
+              <span class="m-doc-wrap-bumper">void <a href="#a79225a858c34f7084e2db0015e55945a" class="m-doc-self">get_local_ip_and_port</a>(</span><span class="m-doc-wrap">std::string&amp; ip,
+              int&amp; port) const <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1de284778b5558fbd7be59632bbaa85e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1de284778b5558fbd7be59632bbaa85e" class="m-doc-self">socket</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="httplib_8h.html#a84d69664998f9fc285147c6d1382a6fb" class="m-doc">socket_<wbr />t</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
             <dd><span></span></dd>
           </dl>
         </section>

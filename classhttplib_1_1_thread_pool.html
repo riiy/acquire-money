@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About | AcquireMoney</title>
+  <title>httplib::ThreadPool class | AcquireMoney</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,7 +27,7 @@
             <li>
               <a href="pages.html">Pages</a>
               <ol>
-                <li><a href="about.html" id="m-navbar-current">About</a></li>
+                <li><a href="about.html">About</a></li>
               </ol>
             </li>
             <li><a href="namespaces.html">Namespaces</a></li>
@@ -49,9 +49,62 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          About
+          <span class="m-breadcrumb"><a href="namespacehttplib.html">httplib</a>::<wbr/></span>ThreadPool <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="httplib_8h.html">&lt;httplib.h&gt;</a></div>
         </h1>
-<section id="doc"><h2><a href="#doc">AcquireMoney Documentation</a></h2><p>This is the auto-generated documentation for the initial project of the AcquireMoney. It shows how we can use Doxygen to automatically build a browsable documentation for your projects.</p></section>
+        <p><span></span></p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classhttplib_1_1_task_queue.html" class="m-doc">TaskQueue</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a322937261ee5818426a3f09caa8f37ec">
+              <span class="m-doc-wrap-bumper"><a href="#a322937261ee5818426a3f09caa8f37ec" class="m-doc-self">ThreadPool</a>(</span><span class="m-doc-wrap">size_t n) <span class="m-label m-flat m-info">explicit</span> </span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aac78a365c5d7910e7367a83d21369ed2">
+              <span class="m-doc-wrap-bumper"><a href="#aac78a365c5d7910e7367a83d21369ed2" class="m-doc-self">ThreadPool</a>(</span><span class="m-doc-wrap">const <a href="classhttplib_1_1_thread_pool.html" class="m-doc">ThreadPool</a>&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad0f2cf2a96d2b9bcad7183c467c84e50">
+              <span class="m-doc-wrap-bumper"><a href="#ad0f2cf2a96d2b9bcad7183c467c84e50" class="m-doc-self">~ThreadPool</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a0a1653126f41111579d17adc245b3ad1">
+              <span class="m-doc-wrap-bumper">void <a href="#a0a1653126f41111579d17adc245b3ad1" class="m-doc-self">enqueue</a>(</span><span class="m-doc-wrap">std::function&lt;void()&gt; fn) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9884cbaef9ed5f92152b82d2c93340ea">
+              <span class="m-doc-wrap-bumper">void <a href="#a9884cbaef9ed5f92152b82d2c93340ea" class="m-doc-self">shutdown</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
       </div>
     </div>
   </div>

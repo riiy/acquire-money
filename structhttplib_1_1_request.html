@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>httplib::Request struct | AcquireMoney</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">AcquireMoney</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="pages.html">Pages</a>
+              <ol>
+                <li><a href="about.html">About</a></li>
+              </ol>
+            </li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacehttplib.html">httplib</a>::<wbr/></span>Request <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="httplib_8h.html">&lt;httplib.h&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a15426727f1b20cfc4e021e97012ed541">
+              <span class="m-doc-wrap-bumper">auto <a href="#a15426727f1b20cfc4e021e97012ed541" class="m-doc-self">has_header</a>(</span><span class="m-doc-wrap">const std::string&amp; key) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1a0ed323d53df032214a1729db175355">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1a0ed323d53df032214a1729db175355" class="m-doc-self">get_header_value</a>(</span><span class="m-doc-wrap">const std::string&amp; key,
+              size_t id = 0) const -&gt; std::string</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a99e1fdd30ad037a266d579d6ef71b6b0">
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a99e1fdd30ad037a266d579d6ef71b6b0" class="m-doc-self">get_header_value</a>(</span><span class="m-doc-wrap">const std::string&amp; key,
+              size_t id = 0) const -&gt; T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae16288e2907707d539d115c785119be5">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae16288e2907707d539d115c785119be5" class="m-doc-self">get_header_value_count</a>(</span><span class="m-doc-wrap">const std::string&amp; key) const -&gt; size_t</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af75d1bafb42f0a7f8a9f977b60324843">
+              <span class="m-doc-wrap-bumper">void <a href="#af75d1bafb42f0a7f8a9f977b60324843" class="m-doc-self">set_header</a>(</span><span class="m-doc-wrap">const std::string&amp; key,
+              const std::string&amp; val)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0844503ea91ecd8075c3c510d52c4216">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0844503ea91ecd8075c3c510d52c4216" class="m-doc-self">has_param</a>(</span><span class="m-doc-wrap">const std::string&amp; key) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9386e500de33e4e5af99724a4828e714">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9386e500de33e4e5af99724a4828e714" class="m-doc-self">get_param_value</a>(</span><span class="m-doc-wrap">const std::string&amp; key,
+              size_t id = 0) const -&gt; std::string</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a17dc86435cb0f85dc766097a7bc93b7d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a17dc86435cb0f85dc766097a7bc93b7d" class="m-doc-self">get_param_value_count</a>(</span><span class="m-doc-wrap">const std::string&amp; key) const -&gt; size_t</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9be91099296a3c65ae972cc2bfaf578a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9be91099296a3c65ae972cc2bfaf578a" class="m-doc-self">is_multipart_form_data</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6c77d22a057f4da22c25aa785b46080a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6c77d22a057f4da22c25aa785b46080a" class="m-doc-self">has_file</a>(</span><span class="m-doc-wrap">const std::string&amp; key) const -&gt; bool</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa6aab6cb73afc579bf719f6269d04f17">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa6aab6cb73afc579bf719f6269d04f17" class="m-doc-self">get_file_value</a>(</span><span class="m-doc-wrap">const std::string&amp; key) const -&gt; <a href="structhttplib_1_1_multipart_form_data.html" class="m-doc">MultipartFormData</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a616fada50105b8274f09d3a1e08121bf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a616fada50105b8274f09d3a1e08121bf" class="m-doc-self">get_file_values</a>(</span><span class="m-doc-wrap">const std::string&amp; key) const -&gt; std::vector&lt;<a href="structhttplib_1_1_multipart_form_data.html" class="m-doc">MultipartFormData</a>&gt;</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="af69b50892d54b1a66c9b47e53226badc">
+              std::string <a href="#af69b50892d54b1a66c9b47e53226badc" class="m-doc-self">method</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac26dc36ecdf16660d152385d39c7be9a">
+              std::string <a href="#ac26dc36ecdf16660d152385d39c7be9a" class="m-doc-self">path</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aff4a258b9b297834c0ad45afd40a75b4">
+              <a href="namespacehttplib.html#a6fb30cf4bb44485bee38481e46ab8dc5" class="m-doc">Headers</a> <a href="#aff4a258b9b297834c0ad45afd40a75b4" class="m-doc-self">headers</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad4502def5e057794ad17f014cf671656">
+              std::string <a href="#ad4502def5e057794ad17f014cf671656" class="m-doc-self">body</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5d14feb3676c9f75f826d5685f041cd5">
+              std::string <a href="#a5d14feb3676c9f75f826d5685f041cd5" class="m-doc-self">remote_addr</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a70245e5d672feb090b844e96744fd6e7">
+              int <a href="#a70245e5d672feb090b844e96744fd6e7" class="m-doc-self">remote_port</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a337b498e36840b7ab7285b3dd8e2fa48">
+              std::string <a href="#a337b498e36840b7ab7285b3dd8e2fa48" class="m-doc-self">local_addr</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af34f7c735d208e9366bd0bf6c0ea3332">
+              int <a href="#af34f7c735d208e9366bd0bf6c0ea3332" class="m-doc-self">local_port</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa3edfd554b749bf2cb03a57a12c24602">
+              std::string <a href="#aa3edfd554b749bf2cb03a57a12c24602" class="m-doc-self">version</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a81749298e170ed7559a9dee927ec078f">
+              std::string <a href="#a81749298e170ed7559a9dee927ec078f" class="m-doc-self">target</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a757f45c8985e2d1d879ee7bdf54d8626">
+              <a href="namespacehttplib.html#a51ce06867e711ba5095eff9d606e802e" class="m-doc">Params</a> <a href="#a757f45c8985e2d1d879ee7bdf54d8626" class="m-doc-self">params</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab5a7da2bbbddeda10dba907a93201def">
+              <a href="namespacehttplib.html#ac3d29d4b3084ddc665b2a265ca9888e9" class="m-doc">MultipartFormDataMap</a> <a href="#ab5a7da2bbbddeda10dba907a93201def" class="m-doc-self">files</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abe8594e9fe1652a3b3846823c9fc065c">
+              <a href="namespacehttplib.html#a3395bd4008ea82b092537f3084dddf5e" class="m-doc">Ranges</a> <a href="#abe8594e9fe1652a3b3846823c9fc065c" class="m-doc-self">ranges</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9c55b6ab1bcd7c25a40a9c23ee2af1db">
+              <a href="namespacehttplib.html#a33c72941ad79dac75b23f0d6b5f02571" class="m-doc">Match</a> <a href="#a9c55b6ab1bcd7c25a40a9c23ee2af1db" class="m-doc-self">matches</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae8ffd012988e754aaef33a1766a59824">
+              <a href="namespacehttplib.html#ad81ce13409edba1589c0b076b2dfab74" class="m-doc">ResponseHandler</a> <a href="#ae8ffd012988e754aaef33a1766a59824" class="m-doc-self">response_handler</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2aaa1d1733b3854a59aaaabf6bd4cde9">
+              <a href="namespacehttplib.html#a14689d530e42fbb0d8d34b1b5a28c580" class="m-doc">ContentReceiverWithProgress</a> <a href="#a2aaa1d1733b3854a59aaaabf6bd4cde9" class="m-doc-self">content_receiver</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a68b563d55a73c85ae4624b43f840ea0e">
+              <a href="namespacehttplib.html#ac816c86c4eb6af0ee03fb35059631b3c" class="m-doc">Progress</a> <a href="#a68b563d55a73c85ae4624b43f840ea0e" class="m-doc-self">progress</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad52fe030efab9b240ef3d8caeb2c6f7d">
+              size_t <a href="#ad52fe030efab9b240ef3d8caeb2c6f7d" class="m-doc-self">redirect_count_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab6b2118c4c790236cbb009ddb977f544">
+              size_t <a href="#ab6b2118c4c790236cbb009ddb977f544" class="m-doc-self">content_length_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab4345b7b56d1efd0ef8e6ec8f047c607">
+              <a href="namespacehttplib.html#aa14ad56981e64fa7d4972a812866fa22" class="m-doc">ContentProvider</a> <a href="#ab4345b7b56d1efd0ef8e6ec8f047c607" class="m-doc-self">content_provider_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac8229da221a0786bdb6c1ad10d126e84">
+              bool <a href="#ac8229da221a0786bdb6c1ad10d126e84" class="m-doc-self">is_chunked_content_provider_</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a95cf89390e33a408559331ff6aad2a53">
+              size_t <a href="#a95cf89390e33a408559331ff6aad2a53" class="m-doc-self">authorization_count_</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>AcquireMoney. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

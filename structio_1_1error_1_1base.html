@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>acquiremoney/ directory | AcquireMoney</title>
+  <title>io::error::base struct | AcquireMoney</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,7 +49,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          acquiremoney<span class="m-breadcrumb">/</span> <span class="m-thin">directory</span>
+          <span class="m-breadcrumb"><a href="namespaceio.html">io</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespaceio_1_1error.html">error</a>::<wbr/></span>base <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="csv_8h.html">&lt;csv.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -58,19 +59,93 @@
             <li>
               Reference
               <ul>
-                <li><a href="#files">Files</a></li>
+                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="files">
-          <h2><a href="#files">Files</a></h2>
+        <section id="derived-classes">
+          <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
-            <dt>file <a href="csv2ch_8h.html" class="m-doc">csv2ch.h</a></dt>
+            <dt>
+              struct <a href="structio_1_1error_1_1can__not__open__file.html" class="m-doc">can_not_open_file</a>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="greeter_8h.html" class="m-doc">greeter.h</a></dt>
+            <dt>
+              struct <a href="structio_1_1error_1_1duplicated__column__in__header.html" class="m-doc">duplicated_column_in_header</a>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="stock__feature_8h.html" class="m-doc">stock_feature.h</a></dt>
+            <dt>
+              struct <a href="structio_1_1error_1_1escaped__string__not__closed.html" class="m-doc">escaped_string_not_closed</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="structio_1_1error_1_1extra__column__in__header.html" class="m-doc">extra_column_in_header</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="structio_1_1error_1_1header__missing.html" class="m-doc">header_missing</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="structio_1_1error_1_1integer__must__be__positive.html" class="m-doc">integer_must_be_positive</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="structio_1_1error_1_1integer__overflow.html" class="m-doc">integer_overflow</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="structio_1_1error_1_1integer__underflow.html" class="m-doc">integer_underflow</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="structio_1_1error_1_1invalid__single__character.html" class="m-doc">invalid_single_character</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="structio_1_1error_1_1line__length__limit__exceeded.html" class="m-doc">line_length_limit_exceeded</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="structio_1_1error_1_1missing__column__in__header.html" class="m-doc">missing_column_in_header</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="structio_1_1error_1_1no__digit.html" class="m-doc">no_digit</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="structio_1_1error_1_1too__few__columns.html" class="m-doc">too_few_columns</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              struct <a href="structio_1_1error_1_1too__many__columns.html" class="m-doc">too_many_columns</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a7d9ff6a31b716a24f056cf8a3e15191d">
+              <span class="m-doc-wrap-bumper">void <a href="#a7d9ff6a31b716a24f056cf8a3e15191d" class="m-doc-self">format_error_message</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a676fc3d9348e1130f1d343ce4b9187c1">
+              <span class="m-doc-wrap-bumper">auto <a href="#a676fc3d9348e1130f1d343ce4b9187c1" class="m-doc-self">what</a>(</span><span class="m-doc-wrap">) const -&gt; const char* <span class="m-label m-flat m-warning">override</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a3ca424e883ceb4405edf12b8bf974610">
+              char <a href="#a3ca424e883ceb4405edf12b8bf974610" class="m-doc-self">error_message_buffer</a>
+            </dt>
             <dd><span></span></dd>
           </dl>
         </section>
