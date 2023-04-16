@@ -5,16 +5,18 @@
 #include <vector>
 
 namespace amshare {
-
+  /**
+   * @brief  东方财富网-行情首页-沪深京 A 股
+   */
   namespace stock_hist_em {
     /**
      * @brief 东方财富网-沪深京A股-实时行情
      * https://quote.eastmoney.com/center/gridlist.html#hs_a_board
      */
-    class stock_zh_a_spot_em {
+    class zh_a_spot {
       /**
-       * @brief   "序号", "代码", "名称", "最新价", "涨跌幅", "涨跌额", "成交量", "成交额", "振幅", "最高", "最低", "今开", "昨收",
-       *     "量比", "换手率", "市盈率-动态", "市净率", "总市值", "流通市值", "涨速", "5分钟涨跌", "60日涨跌幅", "年初至今涨跌幅",
+       * @brief   "序号", "代码", "名称", "最新价", "涨跌幅", "涨跌额", "成交量", "成交额", "振幅", "最高", "最低", "今开", "昨收",  "量比", "换手率", "市盈率-动态", "市净率", "总市值", "流通市值",
+       * "涨速", "5分钟涨跌", "60日涨跌幅", "年初至今涨跌幅",
        */
     protected:
       struct row {
@@ -47,7 +49,7 @@ namespace amshare {
       /**
        * @brief 创建东方财富网-沪深京 A 股-实时行情
        */
-      stock_zh_a_spot_em();
+      zh_a_spot();
       /**
        * @brief 写入结果到csv文件
        * @param file_path 文件路径

@@ -1,4 +1,5 @@
 #include <acquiremoney/greeter.h>
+#include <acquiremoney/stock_feature.h>
 #include <acquiremoney/version.h>
 #include <doctest/doctest.h>
 
@@ -22,4 +23,9 @@ TEST_CASE("Greeter") {
 TEST_CASE("AcquireMoney version") {
   static_assert(std::string_view(ACQUIREMONEY_VERSION) == std::string_view("1.0"));
   CHECK(std::string(ACQUIREMONEY_VERSION) == std::string("1.0"));
+}
+
+TEST_CASE("csv2ch") {
+  auto spot_em = amshare::stock_hist_em::zh_a_spot();
+  spot_em.to_csv("csv2ch test");
 }
