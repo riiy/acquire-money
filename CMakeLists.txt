@@ -33,8 +33,18 @@ CPMAddPackage(
   GITHUB_REPOSITORY fmtlib/fmt
   OPTIONS "FMT_INSTALL YES" # create an installable target
 )
+
 CPMAddPackage("gh:ClickHouse/clickhouse-cpp@2.3.0")
-file(DOWNLOAD https://raw.githubusercontent.com/yhirose/cpp-httplib/master/httplib.h "${CMAKE_CURRENT_SOURCE_DIR}/include/httplib.h")
+
+CPMAddPackage("gh:gabime/spdlog@1.11.0")
+
+find_package(CURL REQUIRED)
+if(CURL_FOUND)
+  include_directories(${CURL_INCLUDE_DIR})
+else(CURL_FOUND)
+  message(FATAL_ERROR "Could not find the CURL library and development files.")
+endif(CURL_FOUND)
+
 file(DOWNLOAD https://raw.githubusercontent.com/ben-strasser/fast-cpp-csv-parser/master/csv.h "${CMAKE_CURRENT_SOURCE_DIR}/include/csv.h")
 
 # ---- Add source files ----
@@ -53,7 +63,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 target_compile_options(${PROJECT_NAME} PUBLIC "$<$<COMPILE_LANG_AND_ID:CXX,MSVC>:/permissive->")
 
 # Link dependencies
-target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt $<BUILD_INTERFACE:clickhouse-cpp-lib>)
+target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt $<BUILD_INTERFACE:clickhouse-cpp-lib> ${CURL_LIBRARIES} $<BUILD_INTERFACE:spdlog::spdlog_header_only>)
 
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include/${PROJECT_NAME}-${PROJECT_VERSION}>)
 
