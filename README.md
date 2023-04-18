@@ -1,5 +1,4 @@
 [![Actions Status](https://github.com/riiy/acquire-money/workflows/MacOS/badge.svg)](https://github.com/riiy/acquire-money/actions)
-<!-- [![Actions Status](https://github.com/riiy/acquire-money/workflows/Windows/badge.svg)](https://github.com/riiy/acquire-money/actions) -->
 [![Actions Status](https://github.com/riiy/acquire-money/workflows/Ubuntu/badge.svg)](https://github.com/riiy/acquire-money/actions)
 [![Actions Status](https://github.com/riiy/acquire-money/workflows/Style/badge.svg)](https://github.com/riiy/acquire-money/actions)
 [![Actions Status](https://github.com/riiy/acquire-money/workflows/Install/badge.svg)](https://github.com/riiy/acquire-money/actions)
