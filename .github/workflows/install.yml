@@ -26,6 +26,9 @@ jobs:
           path: "**/cpm_modules"
           key: ${{ github.workflow }}-cpm-modules-${{ hashFiles('**/CMakeLists.txt', '**/*.cmake') }}
 
+      - name: Install dependencies
+        run: apt install -y libcurl4 libcurl4-openssl-dev
+
       - name: build and install library
         run: |
           cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release

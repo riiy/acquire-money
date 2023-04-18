@@ -3,8 +3,6 @@ name: Windows
 on:
   push:
     branches:
-      - master
-      - main
       - windows
   pull_request:
     branches:
