@@ -11,10 +11,7 @@
 
 using namespace amshare;
 static size_t write_cb(char *data, size_t n, size_t l, void *userp) {
-  /* take care of the data here, ignored in this example */
-  (void)data;
   ((std::string *)userp)->append((char *)data, n * l);
-  (void)userp;
   return n * l;
 }
 stock_hist_em::zh_a_spot::zh_a_spot() {
