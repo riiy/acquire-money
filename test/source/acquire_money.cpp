@@ -2,7 +2,6 @@
 #include <acquiremoney/stock_feature.h>
 #include <acquiremoney/version.h>
 #include <doctest/doctest.h>
-#include <spdlog/spdlog.h>
 
 #include <string>
 

@@ -38,14 +38,6 @@ CPMAddPackage("gh:ClickHouse/clickhouse-cpp@2.3.0")
 
 CPMAddPackage("gh:gabime/spdlog@1.11.0")
 
-CPMAddPackage(
-  NAME json
-  GIT_TAG "v3.11.2"
-  GITHUB_REPOSITORY nlohmann/json
-  OPTIONS "JSON_Install YES"
-  OPTIONS "JSON_BuildTests OFF"
-)
-
 find_package(CURL REQUIRED)
 if(CURL_FOUND)
   include_directories(${CURL_INCLUDE_DIR})
@@ -54,6 +46,7 @@ else(CURL_FOUND)
 endif(CURL_FOUND)
 
 file(DOWNLOAD https://raw.githubusercontent.com/ben-strasser/fast-cpp-csv-parser/master/csv.h "${CMAKE_CURRENT_SOURCE_DIR}/include/csv.h")
+file(DOWNLOAD https://raw.githubusercontent.com/nlohmann/json/develop/single_include/nlohmann/json.hpp "${CMAKE_CURRENT_SOURCE_DIR}/include/json.h")
 
 # ---- Add source files ----
 
@@ -71,7 +64,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 target_compile_options(${PROJECT_NAME} PUBLIC "$<$<COMPILE_LANG_AND_ID:CXX,MSVC>:/permissive->")
 
 # Link dependencies
-target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt nlohmann_json::nlohmann_json $<BUILD_INTERFACE:clickhouse-cpp-lib> ${CURL_LIBRARIES} $<BUILD_INTERFACE:spdlog::spdlog_header_only>)
+target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt $<BUILD_INTERFACE:clickhouse-cpp-lib> ${CURL_LIBRARIES} $<BUILD_INTERFACE:spdlog::spdlog_header_only>)
 
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include/${PROJECT_NAME}-${PROJECT_VERSION}>)
 

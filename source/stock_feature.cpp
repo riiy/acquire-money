@@ -1,5 +1,6 @@
 #include <acquiremoney/stock_feature.h>
 #include <curl/curl.h>
+#include <json.h>
 #include <spdlog/spdlog.h>
 
 #include <fstream>
@@ -10,6 +11,7 @@
 #include <vector>
 
 using namespace amshare;
+using json = nlohmann::json;
 static size_t write_cb(char *data, size_t n, size_t l, void *userp) {
   ((std::string *)userp)->append((char *)data, n * l);
   return n * l;
@@ -41,6 +43,8 @@ stock_hist_em::zh_a_spot::zh_a_spot() {
     curl_easy_cleanup(curl);
 
     if (res == CURLE_OK) {
+      auto data = json::parse(_raw_data);
+      cout << data["rt"] << endl;
     }
   }
 
