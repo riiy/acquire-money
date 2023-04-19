@@ -43,6 +43,7 @@ CPMAddPackage(
   GIT_TAG "v3.11.2"
   GITHUB_REPOSITORY nlohmann/json
   OPTIONS "JSON_Install YES"
+  OPTIONS "JSON_BuildTests OFF"
 )
 
 find_package(CURL REQUIRED)
