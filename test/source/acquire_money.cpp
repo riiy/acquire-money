@@ -8,9 +8,6 @@
 
 TEST_CASE("Greeter") {
   using namespace greeter;
-  // SPDLOG_INFO("global log with source info");
-  // spdlog::set_level(spdlog::level::trace);
-  // spdlog::debug("测试");
   Greeter greeter("测试");
 
   CHECK(greeter.greet(LanguageCode::EN) == "Hello, 测试!");
@@ -26,6 +23,6 @@ TEST_CASE("AcquireMoney version") {
 
 TEST_CASE("csv2ch") {
   auto spot_em = amshare::stock_hist_em::zh_a_spot();
-  auto ret = spot_em.to_csv("csv2ch test");
+  auto ret = spot_em.to_csv("/tmp/spot.csv");
   CHECK(ret == 0);
 }
