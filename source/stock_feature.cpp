@@ -43,8 +43,10 @@ stock_hist_em::zh_a_spot::zh_a_spot() {
     curl_easy_cleanup(curl);
 
     if (res == CURLE_OK) {
-      auto data = json::parse(_raw_data);
-      cout << data["rt"] << endl;
+      if (!_raw_data.empty()) {
+        auto data = json::parse(_raw_data);
+        cout << data["rt"] << endl;
+      }
     }
   }
 
