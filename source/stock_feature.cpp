@@ -1,7 +1,6 @@
 #include <acquiremoney/stock_feature.h>
 #include <curl/curl.h>
 #include <json.h>
-#include <spdlog/spdlog.h>
 
 #include <fstream>
 #include <iostream>

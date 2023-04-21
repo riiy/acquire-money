@@ -20,6 +20,9 @@ CPMAddPackage(
   OPTIONS "CXXOPTS_BUILD_EXAMPLES NO" "CXXOPTS_BUILD_TESTS NO" "CXXOPTS_ENABLE_INSTALL YES"
 )
 CPMAddPackage("gh:TheLartians/Format.cmake@1.7.3")
+CPMAddPackage("gh:ClickHouse/clickhouse-cpp@2.3.0")
+CPMAddPackage("gh:gabime/spdlog@1.11.0")
+
 find_package(Threads REQUIRED)
 
 CPMAddPackage(NAME AcquireMoney SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
@@ -29,4 +32,4 @@ add_executable(${PROJECT_NAME} ${sources})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 
-target_link_libraries(${PROJECT_NAME} AcquireMoney::AcquireMoney cxxopts clickhouse-cpp-lib)
+target_link_libraries(${PROJECT_NAME} AcquireMoney::AcquireMoney cxxopts clickhouse-cpp-lib spdlog::spdlog_header_only)
