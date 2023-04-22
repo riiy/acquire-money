@@ -34,3 +34,4 @@ add_executable(${PROJECT_NAME} ${sources})
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 
 target_link_libraries(${PROJECT_NAME} AcquireMoney::AcquireMoney cxxopts clickhouse-cpp-lib spdlog::spdlog_header_only)
+target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>)

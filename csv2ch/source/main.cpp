@@ -1,4 +1,3 @@
-#include <acquiremoney/csv2ch.h>
 #include <acquiremoney/greeter.h>
 #include <acquiremoney/version.h>
 #include <clickhouse/client.h>
@@ -6,6 +5,7 @@
 #include <clickhouse/columns/numeric.h>
 #include <clickhouse/columns/string.h>
 #include <csv.h>
+#include <csv2ch.h>
 
 #include <cxxopts.hpp>
 #include <iostream>
