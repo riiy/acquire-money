@@ -41,7 +41,6 @@ else(CURL_FOUND)
   message(FATAL_ERROR "Could not find the CURL library and development files.")
 endif(CURL_FOUND)
 
-file(DOWNLOAD https://raw.githubusercontent.com/ben-strasser/fast-cpp-csv-parser/master/csv.h "${CMAKE_CURRENT_SOURCE_DIR}/include/csv.h")
 file(DOWNLOAD https://raw.githubusercontent.com/nlohmann/json/develop/single_include/nlohmann/json.hpp "${CMAKE_CURRENT_SOURCE_DIR}/include/json.h")
 
 # ---- Add source files ----

@@ -22,6 +22,7 @@ CPMAddPackage(
 CPMAddPackage("gh:TheLartians/Format.cmake@1.7.3")
 CPMAddPackage("gh:ClickHouse/clickhouse-cpp@2.3.0")
 CPMAddPackage("gh:gabime/spdlog@1.11.0")
+file(DOWNLOAD https://raw.githubusercontent.com/ben-strasser/fast-cpp-csv-parser/master/csv.h "${CMAKE_CURRENT_SOURCE_DIR}/../include/csv.h")
 
 find_package(Threads REQUIRED)
 
