@@ -8,18 +8,13 @@ namespace amshare {
   /**
    * @brief  东方财富网-行情首页-沪深京 A 股
    */
-  namespace stock_hist_em {
-    /**
-     * @brief 东方财富网-沪深京A股-实时行情
-     * https://quote.eastmoney.com/center/gridlist.html#hs_a_board
-     */
-    class zh_a_spot {
+  namespace stock_feature {
+
       /**
        * @brief   "序号", "代码", "名称", "最新价", "涨跌幅", "涨跌额", "成交量", "成交额", "振幅", "最高", "最低", "今开", "昨收",  "量比", "换手率", "市盈率-动态", "市净率", "总市值", "流通市值",
        * "涨速", "5分钟涨跌", "60日涨跌幅", "年初至今涨跌幅",
        */
 
-    protected:
       struct row {
         std::string 序号;
         std::string 代码;
@@ -45,24 +40,11 @@ namespace amshare {
         double 六十日涨跌 = 0;
         double 年初至今涨跌幅 = 0;
       };
-      std::vector<row> _data{};
-      std::string _raw_data;
-
-    public:
-      /**
-       * @brief 创建东方财富网-沪深京 A 股-实时行情
-       */
-      zh_a_spot();
-      /**
-       * @brief 写入结果到csv文件
-       * @param file_path 文件路径
-       * @return 0 success
-       */
-      int to_csv(std::string file_path);
-      /**
-       * @brief 取数据
-       * */
-      std::vector<row> get_data();
-    };
+    /**
+     * @brief 东方财富网-沪深京A股-实时行情
+     * https://quote.eastmoney.com/center/gridlist.html#hs_a_board
+     * @return A股实时行情列表
+     */
+    std::vector<row> stock_zh_a_spot_em();
   }  // namespace stock_hist_em
 }  // namespace amshare

@@ -20,8 +20,6 @@ TEST_CASE("AcquireMoney version") {
   CHECK(std::string(ACQUIREMONEY_VERSION) == std::string("1.0"));
 }
 
-TEST_CASE("csv2ch") {
-  auto spot_em = amshare::stock_hist_em::zh_a_spot();
-  auto ret = spot_em.to_csv("/tmp/spot.csv");
-  CHECK(ret == 0);
+TEST_CASE("stock_zh_a_spot_em") {
+  auto ret = amshare::stock_feature::stock_zh_a_spot_em();
 }
