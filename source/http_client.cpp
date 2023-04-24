@@ -5,10 +5,6 @@
 
 using namespace amshare;
 
-static size_t write_cb(char *data, size_t n, size_t l, void *userp) {
-  ((std::string *)userp)->append((char *)data, n * l);
-  return n * l;
-}
 std::string http::get(const std::string &url) {
   std::string _raw_data;
   CURL *curl;

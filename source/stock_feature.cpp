@@ -11,7 +11,7 @@
 
 using namespace amshare;
 using json = nlohmann::json;
-std::vector<amshare::stock_feature::row> amshare::stock_feature::stock_zh_a_spot_em(){
+std::vector<amshare::stock_feature::row> amshare::stock_feature::stock_zh_a_spot_em() {
   using namespace std;
   string url
       = "http://82.push2.eastmoney.com/api/qt/clist/"

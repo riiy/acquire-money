@@ -20,6 +20,4 @@ TEST_CASE("AcquireMoney version") {
   CHECK(std::string(ACQUIREMONEY_VERSION) == std::string("1.0"));
 }
 
-TEST_CASE("stock_zh_a_spot_em") {
-  auto ret = amshare::stock_feature::stock_zh_a_spot_em();
-}
+TEST_CASE("stock_zh_a_spot_em") { auto ret = amshare::stock_feature::stock_zh_a_spot_em(); }
