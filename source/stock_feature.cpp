@@ -19,7 +19,9 @@ std::vector<amshare::stock_feature::row> amshare::stock_feature::stock_zh_a_spot
         "f15,"
         "f16,"
         "f17,f18,f20,f21,f23,f24,f25,f22,f11,f62,f128,f136,f115,f152&_=1681781731653";
-  auto resp = http::get(url);
+  std::string resp;
+  auto res = http::get(url, resp);
+  cout << res << endl;
   cout << resp << endl;
   vector<amshare::stock_feature::row> ret;
   return ret;

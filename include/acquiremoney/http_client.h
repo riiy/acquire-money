@@ -1,5 +1,7 @@
 #pragma once
 
+#include <curl/curl.h>
+
 #include <string>
 
 inline size_t write_cb(char *data, size_t n, size_t l, void *userp) {
@@ -8,6 +10,6 @@ inline size_t write_cb(char *data, size_t n, size_t l, void *userp) {
 }
 namespace amshare {
   namespace http {
-    std::string get(const std::string &url);
+    CURLcode get(const std::string &url, std::string &response);
   }  // namespace http
 }  // namespace amshare
