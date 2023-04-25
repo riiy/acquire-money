@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>httplib::detail::decompressor class | AcquireMoney</title>
+  <title>http_client.h file | AcquireMoney</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,8 +49,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacehttplib.html">httplib</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacehttplib_1_1detail.html">detail</a>::<wbr/></span>decompressor <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="httplib_8h.html">&lt;httplib.h&gt;</a></div>
+          http_client.h <span class="m-thin">file</span>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -59,42 +58,29 @@
             <li>
               Reference
               <ul>
-                <li><a href="#pub-types">Public types</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="pub-types">
-          <h2><a href="#pub-types">Public types</a></h2>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt id="afd922d878d8fd77012b87114f7193a78">
-              using <a href="#afd922d878d8fd77012b87114f7193a78" class="m-doc-self">Callback</a> = std::function&lt;bool(const char*data, size_t data_len)&gt;
-            </dt>
+            <dt>namespace <a href="namespaceamshare.html" class="m-doc">amshare</a></dt>
+            <dd><span></span></dd>
+            <dt>namespace <a href="namespaceamshare_1_1http.html" class="m-doc">amshare::http</a></dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
-            <dt id="a8dc4404b2247cbf43b60838aa4ffb938">
-              <span class="m-doc-wrap-bumper"><a href="#a8dc4404b2247cbf43b60838aa4ffb938" class="m-doc-self">~decompressor</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
-          <dl class="m-doc">
-            <dt id="adf987b42198e8f9fdd555ce9577341ba">
-              <span class="m-doc-wrap-bumper">auto <a href="#adf987b42198e8f9fdd555ce9577341ba" class="m-doc-self">is_valid</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ad4fcf7cd57cd8e0b66e5a4d101fffc2e">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad4fcf7cd57cd8e0b66e5a4d101fffc2e" class="m-doc-self">decompress</a>(</span><span class="m-doc-wrap">const char* data,
-              size_t data_length,
-              <a href="classhttplib_1_1detail_1_1decompressor.html#afd922d878d8fd77012b87114f7193a78" class="m-doc">Callback</a> callback) -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a5573582cdf0f32339c8d41d785effa9e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5573582cdf0f32339c8d41d785effa9e" class="m-doc-self">write_cb</a>(</span><span class="m-doc-wrap">char* data,
+              size_t n,
+              size_t l,
+              void* userp) -&gt; size_t</span>
             </dt>
             <dd><span></span></dd>
           </dl>

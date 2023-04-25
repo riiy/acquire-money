@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>io::error::with_column_content struct | AcquireMoney</title>
+  <title>amshare::stock_feature::row struct | AcquireMoney</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,72 +49,114 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespaceio.html">io</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespaceio_1_1error.html">error</a>::<wbr/></span>with_column_content <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="csv_8h.html">&lt;csv.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespaceamshare.html">amshare</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespaceamshare_1_1stock__feature.html">stock_feature</a>::<wbr/></span>row <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="stock__feature_8h.html">&lt;stock_feature.h&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>&quot;序号&quot;, &quot;代码&quot;, &quot;名称&quot;, &quot;最新价&quot;, &quot;涨跌幅&quot;, &quot;涨跌额&quot;, &quot;成交量&quot;, &quot;成交额&quot;, &quot;振幅&quot;, &quot;最高&quot;, &quot;最低&quot;, &quot;今开&quot;, &quot;昨收&quot;, &quot;量比&quot;, &quot;换手率&quot;, &quot;市盈率-动态&quot;, &quot;市净率&quot;, &quot;总市值&quot;, &quot;流通市值&quot;, &quot;涨速&quot;, &quot;5分钟涨跌&quot;, &quot;60日涨跌幅&quot;, &quot;年初至今涨跌幅&quot;,</p>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              struct <a href="structio_1_1error_1_1integer__must__be__positive.html" class="m-doc">integer_must_be_positive</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              struct <a href="structio_1_1error_1_1integer__overflow.html" class="m-doc">integer_overflow</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              struct <a href="structio_1_1error_1_1integer__underflow.html" class="m-doc">integer_underflow</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              struct <a href="structio_1_1error_1_1invalid__single__character.html" class="m-doc">invalid_single_character</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              struct <a href="structio_1_1error_1_1no__digit.html" class="m-doc">no_digit</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
-          <dl class="m-doc">
-            <dt id="aca754ef952be5ff4fcfe51ccb57ab66d">
-              <span class="m-doc-wrap-bumper"><a href="#aca754ef952be5ff4fcfe51ccb57ab66d" class="m-doc-self">with_column_content</a>(</span><span class="m-doc-wrap">)</span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
-          <dl class="m-doc">
-            <dt id="ae7375310dc02425cb3cc4115b3ac8d6a">
-              <span class="m-doc-wrap-bumper">void <a href="#ae7375310dc02425cb3cc4115b3ac8d6a" class="m-doc-self">set_column_content</a>(</span><span class="m-doc-wrap">const char* column_content)</span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a8587779769fbfb40155abb362137a523">
-              char <a href="#a8587779769fbfb40155abb362137a523" class="m-doc-self">column_content</a>
+            <dt id="a868bff3a3387d079e89fbd4243407a2a">
+              std::string <a href="#a868bff3a3387d079e89fbd4243407a2a" class="m-doc-self">序号</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa1aebbabb8d51632e82ddd4848fc7575">
+              std::string <a href="#aa1aebbabb8d51632e82ddd4848fc7575" class="m-doc-self">代码</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0f6b1e899cc917cdd832cac57b7b6786">
+              std::string <a href="#a0f6b1e899cc917cdd832cac57b7b6786" class="m-doc-self">名称</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab2e86afaa0535c7f5270432c97a66a30">
+              double <a href="#ab2e86afaa0535c7f5270432c97a66a30" class="m-doc-self">最新价</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acd156a1426bab96f61c1662f5ea6be6a">
+              double <a href="#acd156a1426bab96f61c1662f5ea6be6a" class="m-doc-self">涨跌幅</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8f3d47b219315a30c3a24e96a5b32b6a">
+              double <a href="#a8f3d47b219315a30c3a24e96a5b32b6a" class="m-doc-self">涨跌额</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a2e69103e621a6c2a43f456130a9c9ac4">
+              double <a href="#a2e69103e621a6c2a43f456130a9c9ac4" class="m-doc-self">成交量</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a360a8b1d33ed12b0b425d1d468a5b276">
+              double <a href="#a360a8b1d33ed12b0b425d1d468a5b276" class="m-doc-self">成交额</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae35bba0e7b305ed071e52bbe248d1763">
+              double <a href="#ae35bba0e7b305ed071e52bbe248d1763" class="m-doc-self">振幅</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7231cadb7e5ee24bd2418d3fce93d25c">
+              double <a href="#a7231cadb7e5ee24bd2418d3fce93d25c" class="m-doc-self">最高</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ada08844045cda01e82b238316c99e1cb">
+              double <a href="#ada08844045cda01e82b238316c99e1cb" class="m-doc-self">最低</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa1bace3c170c97d1b913933d8bc231e6">
+              double <a href="#aa1bace3c170c97d1b913933d8bc231e6" class="m-doc-self">今开</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab5afb640f3ca7a33ccc72ee2f1714540">
+              double <a href="#ab5afb640f3ca7a33ccc72ee2f1714540" class="m-doc-self">昨收</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8a6050ff790c31c4fceec1e90363924f">
+              double <a href="#a8a6050ff790c31c4fceec1e90363924f" class="m-doc-self">量比</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af6421fe02292f76f515794a3147b7903">
+              double <a href="#af6421fe02292f76f515794a3147b7903" class="m-doc-self">换手率</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aeb74f39071ec7fb266a4f5a4a8947416">
+              double <a href="#aeb74f39071ec7fb266a4f5a4a8947416" class="m-doc-self">市盈率_动态</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae3865937544da207c850dad538aca298">
+              double <a href="#ae3865937544da207c850dad538aca298" class="m-doc-self">市净率</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a26c9a665ede26c18cc4ee891c512a685">
+              double <a href="#a26c9a665ede26c18cc4ee891c512a685" class="m-doc-self">总市值</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a420e26ef64039eee5d24ebbfbdbc352d">
+              double <a href="#a420e26ef64039eee5d24ebbfbdbc352d" class="m-doc-self">流通市值</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad44245e3ab7ed020fe2bf3ed5581e5b7">
+              double <a href="#ad44245e3ab7ed020fe2bf3ed5581e5b7" class="m-doc-self">涨速</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a58477fe015a41f1a60d418efd5255776">
+              double <a href="#a58477fe015a41f1a60d418efd5255776" class="m-doc-self">五分钟涨跌</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1188c7abf3ce6e4ef9fcae267c356c8f">
+              double <a href="#a1188c7abf3ce6e4ef9fcae267c356c8f" class="m-doc-self">六十日涨跌</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a43c5923ffa47d24cd4f086fb2c6d034b">
+              double <a href="#a43c5923ffa47d24cd4f086fb2c6d034b" class="m-doc-self">年初至今涨跌幅</a>
             </dt>
             <dd><span></span></dd>
           </dl>

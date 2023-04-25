@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>io::no_comment struct | AcquireMoney</title>
+  <title>amshare::stock_feature namespace | AcquireMoney</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,29 +49,56 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespaceio.html">io</a>::<wbr/></span>no_comment <span class="m-thin">struct</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="csv_8h.html">&lt;csv.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespaceamshare.html">amshare</a>::<wbr/></span>stock_feature <span class="m-thin">namespace</span>
         </h1>
-        <p><span></span></p>
+        <p>东方财富网-行情首页-沪深京 A 股</p>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="pub-static-methods">
-          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
-            <dt id="a52b252547482e28edd076ee2224bc8d8">
-              <span class="m-doc-wrap-bumper">static auto <a href="#a52b252547482e28edd076ee2224bc8d8" class="m-doc-self">is_comment</a>(</span><span class="m-doc-wrap">const char*) -&gt; bool</span>
+            <dt>
+              struct <a href="structamshare_1_1stock__feature_1_1row.html" class="m-doc">row</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>&quot;序号&quot;, &quot;代码&quot;, &quot;名称&quot;, &quot;最新价&quot;, &quot;涨跌幅&quot;, &quot;涨跌额&quot;, &quot;成交量&quot;, &quot;成交额&quot;, &quot;振幅&quot;, &quot;最高&quot;, &quot;最低&quot;, &quot;今开&quot;, &quot;昨收&quot;, &quot;量比&quot;, &quot;换手率&quot;, &quot;市盈率-动态&quot;, &quot;市净率&quot;, &quot;总市值&quot;, &quot;流通市值&quot;, &quot;涨速&quot;, &quot;5分钟涨跌&quot;, &quot;60日涨跌幅&quot;, &quot;年初至今涨跌幅&quot;,</dd>
           </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a67dbb7bde6abcbd386e81a27160c05ad" class="m-doc">stock_zh_a_spot_em</a>(</span><span class="m-doc-wrap">) -&gt; std::vector&lt;<a href="structamshare_1_1stock__feature_1_1row.html" class="m-doc">row</a>&gt;</span>
+            </dt>
+            <dd>东方财富网-沪深京A股-实时行情 <a href="https://quote.eastmoney.com/center/gridlist.html#hs_a_board">https://quote.eastmoney.com/center/gridlist.html#hs_<wbr />a_<wbr />board</a></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a67dbb7bde6abcbd386e81a27160c05ad"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::vector&lt;<a href="structamshare_1_1stock__feature_1_1row.html" class="m-doc">row</a>&gt; amshare::<wbr />stock_feature::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a67dbb7bde6abcbd386e81a27160c05ad" class="m-doc-self">stock_zh_a_spot_em</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="stock__feature_8h.html">&lt;stock_feature.h&gt;</a></div>
+            </h3>
+            <p>东方财富网-沪深京A股-实时行情 <a href="https://quote.eastmoney.com/center/gridlist.html#hs_a_board">https://quote.eastmoney.com/center/gridlist.html#hs_<wbr />a_<wbr />board</a></p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A股实时行情列表</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>
