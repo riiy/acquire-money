@@ -8,3 +8,4 @@ compile_commands.json
 
 # keep update to new version from cmake download file
 include/*.h
+.orgids
