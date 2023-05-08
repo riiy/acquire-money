@@ -9,9 +9,9 @@
 #include <string>
 #include <vector>
 
-using namespace amshare;
+using namespace am;
 using json = nlohmann::json;
-std::vector<amshare::stock_feature::row> amshare::stock_feature::stock_zh_a_spot_em() {
+std::vector<am::stock_feature::row> am::stock_feature::stock_zh_a_spot_em() {
   using namespace std;
   string url
       = "http://82.push2.eastmoney.com/api/qt/clist/"
@@ -23,6 +23,6 @@ std::vector<amshare::stock_feature::row> amshare::stock_feature::stock_zh_a_spot
   auto res = http::get(url, resp);
   cout << res << endl;
   cout << resp << endl;
-  vector<amshare::stock_feature::row> ret;
+  vector<am::stock_feature::row> ret;
   return ret;
 }

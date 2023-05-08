@@ -4,7 +4,7 @@
 #include <unordered_map>
 #include <vector>
 
-namespace amshare {
+namespace am {
   /**
    * @brief  东方财富网-行情首页-沪深京 A 股
    */
@@ -47,4 +47,4 @@ namespace amshare {
      */
     std::vector<row> stock_zh_a_spot_em();
   }  // namespace stock_feature
-}  // namespace amshare
+}  // namespace am

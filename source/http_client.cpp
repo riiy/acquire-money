@@ -4,7 +4,7 @@
 
 #include <cstring>
 
-using namespace amshare;
+using namespace am;
 
 CURLcode http::get(const std::string &url, std::string &response) {
   CURL *curl;
