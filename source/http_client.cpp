@@ -5,7 +5,10 @@
 #include <cstring>
 
 using namespace am;
-
+static size_t write_cb(char *data, size_t n, size_t l, void *userp) {
+  ((std::string *)userp)->append((char *)data, n * l);
+  return n * l;
+}
 CURLcode http::get(const std::string &url, std::string &response) {
   CURL *curl;
   CURLcode res = CURLE_OK;
